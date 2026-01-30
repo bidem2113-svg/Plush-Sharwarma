@@ -20,7 +20,7 @@ function Beat({ start, end, title, subtitle, visualNote }: { start: number; end:
             style={{ opacity, y }}
             className="fixed inset-0 flex flex-col items-center justify-center z-10 text-center pointer-events-none mix-blend-difference"
         >
-            <h2 className="text-7xl md:text-9xl font-bold tracking-tighter mb-4 text-white uppercase">
+            <h2 className="text-5xl md:text-9xl font-bold tracking-tighter mb-4 text-white uppercase">
                 {title}
             </h2>
             <p className="text-xl md:text-2xl font-light tracking-wide text-gray-300 max-w-lg">

@@ -92,7 +92,7 @@ export default function ScrollSequence() {
     return (
         <canvas
             ref={canvasRef}
-            className="fixed inset-0 w-full h-full object-cover z-0 pointer-events-none"
+            className="fixed top-0 bottom-0 left-0 right-0 mx-auto w-full max-w-screen-xl h-full object-cover z-0 pointer-events-none"
         />
     );
 }

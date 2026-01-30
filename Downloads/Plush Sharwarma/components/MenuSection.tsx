@@ -55,6 +55,13 @@ export default function MenuSection() {
         }
     }, [isOpen]);
 
+    const [isHoverable, setIsHoverable] = useState(false);
+
+    // Interaction Refinement: Only enable hover effects on devices that support it
+    useEffect(() => {
+        setIsHoverable(window.matchMedia('(hover: hover)').matches);
+    }, []);
+
     const getHoverImage = () => {
         return MENU_ITEMS.find(i => i.id === hoveredProduct)?.image || "";
     };
@@ -121,7 +128,7 @@ export default function MenuSection() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: idx * 0.1 }}
-                                whileHover={{ scale: 1.02 }}
+                                whileHover={isHoverable ? { scale: 1.02 } : {}}
                                 onMouseEnter={() => setHoveredProduct(item.id)}
                                 onMouseLeave={() => setHoveredProduct(null)}
                                 className="group relative p-8 border border-white/10 rounded-2xl bg-white/5 hover:bg-white/10 transition-colors cursor-pointer overflow-hidden flex flex-col h-full"
@@ -179,6 +186,7 @@ export default function MenuSection() {
                                     )}
                                 </div>
                             </motion.div>
+
                         );
                     })}
                 </div>
