@@ -85,15 +85,9 @@ export default function ScrollSequence() {
         };
     }, [frameIndex, images, isLoaded]);
 
-    if (!isLoaded) {
-        return (
-            <div className="fixed inset-0 flex items-center justify-center bg-[#050505] z-50">
-                <div className="w-64 h-1 bg-gray-800 rounded-full overflow-hidden">
-                    <div className="h-full bg-white animate-pulse w-1/2" />
-                </div>
-            </div>
-        );
-    }
+    // Non-blocking loading: removed the full-screen loader
+    // Canvas will appear transparent until images are ready
+
 
     return (
         <canvas
