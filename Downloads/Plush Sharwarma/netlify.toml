@@ -1,6 +1,6 @@
 # Netlify configuration for Next.js static export
 [build]
-  command = "npm run build"
+  command = "echo 'Using committed output'"
   publish = "out"
 
 # Redirect all routes to index.html for client-side routing
